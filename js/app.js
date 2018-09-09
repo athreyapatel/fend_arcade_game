@@ -27,8 +27,21 @@ Enemy.prototype.render = function() {
 // This class requires an update(), render() and
 // a handleInput() method.
 Player.prototype.handleInput = function (key) {
-
-
+  switch (key) {
+    case 'left':
+      this.x -=
+      break;
+    case 'up':
+      this.y -=
+      break;
+    case 'down':
+      this.y +=this.speed
+      break;
+    case 'right':
+      this.x +=this.speed
+      break;
+    default:    
+  }
 };
 
 
