@@ -14,8 +14,10 @@ var Enemy = function(x,y,speed) {
 // Parameter: dt, a time delta between ticks
 Enemy.prototype.update = function(dt) {
     // You should multiply any movement by the dt parameter
+    this.x +=this.speed*dt;
     // which will ensure the game runs at the same speed for
     // all computers.
+    
 };
 
 // Draw the enemy on the screen, required method for game
@@ -29,10 +31,10 @@ Enemy.prototype.render = function() {
 Player.prototype.handleInput = function (key) {
   switch (key) {
     case 'left':
-      this.x -=
+      this.x -=this.speed
       break;
     case 'up':
-      this.y -=
+      this.y -=this.speed
       break;
     case 'down':
       this.y +=this.speed
@@ -40,7 +42,7 @@ Player.prototype.handleInput = function (key) {
     case 'right':
       this.x +=this.speed
       break;
-    default:    
+    default: alert("Use only arrow keys");
   }
 };
 
