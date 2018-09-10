@@ -41,6 +41,7 @@ const Player = function(x, y, speed) {
 	this.speed = speed;
 	this.sprite = 'images/char-boy.png';
 }
+//Update the player's position, required method of the game.
 Player.prototype.update = function() {
 
 	if (this.y > 420) {
@@ -56,13 +57,14 @@ Player.prototype.update = function() {
 		this.x = 0;
 	}
 };
-
+// Draw the player on the screen, required method for the game.
 Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
-
+// Handle input method is used to make use of funtioning of the key.
 Player.prototype.handleInput = function (key) {
   switch (key) {
+//Handles arrow keys
     case 'left':
       this.x -=this.speed+50;
       break;
@@ -75,6 +77,7 @@ Player.prototype.handleInput = function (key) {
     case 'right':
       this.x +=this.speed+50;
       break;
+// If you use other than arrow keys, it will alert you.
     default: alert("Use only arrow keys only!");
   }
 };
@@ -92,7 +95,7 @@ const positionY=[60,140,220];
     allEnemies.push(enemy);
   }
 })();
-
+// Player is reset  to the starting position.
 const player=new Player(200,400,50);
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
